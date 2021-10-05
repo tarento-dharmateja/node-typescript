@@ -1,0 +1,36 @@
+{
+  "name": "node-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/bin/www",
+    "start:dev": "\"cross-env NODE_ENV=development node ./src/bin/www\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarento-dharmateja/node-typescript.git"
+  },
+  "keywords": [],
+  "author": "dharmateja.n",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tarento-dharmateja/node-typescript/issues"
+  },
+  "homepage": "https://github.com/tarento-dharmateja/node-typescript#readme",
+  "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/node": "^16.10.2",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "cross": "^1.0.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "http": "0.0.1-security"
+  }
+}
