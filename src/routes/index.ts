@@ -1,13 +1,11 @@
 import express, { Request, Response, NextFunction } from "express";
 
-import { RouteModule } from '../helpers/types/routeTypes';
-
-import env from '../config';
-const {API_BASE_PATH } = env;
+import { RouteModule } from 'helpers/types/routeTypes';
+import paymentRouter from "./paymentRouter";
 
 const routeModule: RouteModule = {
   routePaths: [
-    {path: '/test', router: testRouter, middlewares: [] }
+    {path: '/payment', router: paymentRouter, middlewares: [] }
   ],
   init: (app: express.Application): any => {
     try {
@@ -15,10 +13,12 @@ const routeModule: RouteModule = {
         //exit process
       }
 
-      // TODO: initial middlewares
-
+      app.use((request: Request, reply: Response, next: NextFunction) => {
+        // TODO: initial middlewares
+        return next();
+      });
       //Custom routes
-      this.routePaths.forEach(route => {
+      this.routePaths.forEach( route => {
         app.use(route.path, route.router)
       });
       

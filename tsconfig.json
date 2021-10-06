@@ -1,16 +1,33 @@
 {
   "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es2017",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "pretty": true,
     "lib": [
       "dom",
       "es2015",
       "es2016",
       "es2017"
     ],
-    "typeroots": [
+    "paths": {
+      "*": [
+        "*",
+        "node_modules/*"
+      ]
+    },
+    "typeRoots": [
       "nodemodule/@types",
       "typings"
     ],
     "strict": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true
   },
   "include": [
     "src/**/*"
